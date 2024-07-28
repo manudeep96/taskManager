@@ -11,13 +11,13 @@ import { Repository } from 'typeorm';
 import { Task } from './task.entity';
 
 @Injectable()
-export class TaskRepository {
+export class TasksRepository {
     constructor(
         @Inject('TASK_REPOSITORY')
-        private taskRepository: Repository<Task>,
+        private tasksRepository: Repository<Task>,
     ) {}
 
     async findAll(): Promise<Task[]> {
-        return this.taskRepository.find();
+        return this.tasksRepository.find();
     }
 }
